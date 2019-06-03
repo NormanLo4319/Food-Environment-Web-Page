@@ -10,14 +10,18 @@
 </head>
 
 <body>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
         <div class="navigation">
-                <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" style="background-color: #0BADA6;" href="index.html">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <a class="navbar-brand" href="index.html">
                     Food Environment Analysis
                     </a>
-                    <button class="navbar-toggler border border-white" type-"button" data-toggle="collapse" data-target="#navbarDropdown"
+                    <button class="navbar-toggler border" type-"button" data-toggle="collapse" data-target="#navbarDropdown"
                     aria-controls="navbarDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
                     </button> 
         
                     <div class="collapse navbar-collapse" id="navbarDropdown">
@@ -34,6 +38,17 @@
                                     <a class="dropdown-item" href="plot_4.html">Obesity & Food Environment</a>
                                 </div>
                             </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Statistical Analysis
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="t_test.html">T Test</a>
+                                    <a class="dropdown-item" href="anova.html">ANOVA Test</a>
+                                    <a class="dropdown-item" href="regression.html">Regression Model</a>
+                                </div>
+                            </li>
                         <li class="nav-item">
                             <a class="nav-link" href="group_plot.html">Comparison</a>
                         </li>
@@ -46,40 +61,45 @@
             </div>
 
             <div class="col-lg-5">
-                    <div class="box">
-                        <h2>Visualization</h2>
-                        <div class="container">
-                            <div class="row">
+                <div class="box">
+                    <h2>Visualization</h2>
+                    <div class="container">
+                        <div class="row">
+
                                 <div class="col-6">
                                     <a href="plot_1.html">
                                         <img class="panel" src="Obes_Diab_Rate.png"
                                         width="230px" height="190px" alt="Obesity vs Diabetes">
                                     </a>
                                 </div>
+
                                 <div class="col-6">
                                     <a href="plot_2.html">
                                         <img class="panel" src="Obes_Diab_Rate_Ranked.png"
                                         width="230px" height="190px" alt="Obesity vs Diabetes by Food Environment">
                                     </a>
                                 </div>
+
                                 <div class="col-6">
                                     <a href="plot_3.html">
                                         <img class="panel" src="PFR_Diabetes(After).png"
                                         width="230px" height="190px" alt="Diabetes by Food Environment">
                                     </a>
                                 </div>
+
                                 <div class="col-6">
                                     <a href="plot_4.html">
                                         <img class="panel" src="PFR_Obesity(After).png"
                                         width="230px" height="190px" alt="Obesity by Food Environment">
                                     </a>
                                 </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
+            </div>
 </body>
 <footer>
-    <div class="footer">Copyright & Copy; 2019</div>
+    <div class="footer">&copy; Copyright 2019</div>
 </footer>
 </html>

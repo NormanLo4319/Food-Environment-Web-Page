@@ -10,61 +10,78 @@
 </head>
 
 <body>
-
-    <div class="navigation">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" style="background-color: #0BADA6;" href="index.html">
-            Food Environment Analysis
-            </a>
-            <button class="navbar-toggler border border-white" type-"button" data-toggle="collapse" data-target="#navbarDropdown"
-            aria-controls="navbarDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button> 
-
-            <div class="collapse navbar-collapse" id="navbarDropdown">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Plots
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="plot_1.html">Obesity vs Diabetes</a>
-                            <a class="dropdown-item" href="plot_2.html">Obesity vs Diabetes by Food Environment</a>
-                            <a class="dropdown-item" href="plot_3.html">Diabetes & Food Environment</a>
-                            <a class="dropdown-item" href="plot_4.html">Obesity & Food Environment</a>
-                        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <div class="navigation">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="index.html">
+                Food Environment Analysis
+                </a>
+                <button class="navbar-toggler border" type-"button" data-toggle="collapse" data-target="#navbarDropdown"
+                aria-controls="navbarDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button> 
+    
+                <div class="collapse navbar-collapse" id="navbarDropdown">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Plots
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="plot_1.html">Obesity vs Diabetes</a>
+                                <a class="dropdown-item" href="plot_2.html">Obesity vs Diabetes by Food Environment</a>
+                                <a class="dropdown-item" href="plot_3.html">Diabetes & Food Environment</a>
+                                <a class="dropdown-item" href="plot_4.html">Obesity & Food Environment</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Statistical Analysis
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="t_test.html">T Test</a>
+                                <a class="dropdown-item" href="anova.html">ANOVA Test</a>
+                                <a class="dropdown-item" href="regression.html">Regression Model</a>
+                            </div>
+                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="group_plot.html">Comparison</a>
                     </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="group_plot.html">Comparison</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="data.html">Data</a>
-                </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="data.html">Data</a>
+                    </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
 
-    <div class="container">
+
+    <div class="container mt-4">
         <div class="row">
             <div class="col-lg-7">
                 <div class="box">
                     <h1>Plot: Obesity Rate & Diabetes Rate in Different Food Environments (County Level)</h1>
                     <img src="Obes_Diab_Rate_Ranked.png" class="img-responsive" alt="Obesity Rate and Diabetes Rate in Different Food Environments">
                     <p>
-                        This graph shows the obesity rate and diabetes rate at county level.
+                        This graph shows both the obesity rate and diabetes rate at county level.
                         <ul>
                             <li>
-                                "Green" dots represent the low fast food restaurant density counties.
+                                "Green" dots represent the low-leve fast food restaurant density counties.
                             </li>
                             <li>
                                 "Yellow" dots represent the mid-level fast food restaurant density counties.
                             </li>
                             <li>
-                                "Red" dots represent the high fast food restaurant density counties.
+                                "Red" dots represent the high-level fast food restaurant density counties.
                             </li>
                         </ul>
+                        If food environment is truely correlated with the health outcomes, visually, we should be able to observe the red bubbles will be on the 
+                        right-hand upper corner, the yellow bubbles will be in the middle of the graph, and the green bubbles will be on the left-hand lower corner. 
+                        We do not find any visual evident in this plot suggesting any correlation between food environment and health outcomes.
                     </p>
                 </div>
             </div>
@@ -107,6 +124,6 @@
 
 </body>
 <footer>
-    <div class="footer">Copyright & Copy; 2019</div>
+    <div class="footer">&copy; Copyright 2019</div>
 </footer>
 </html>

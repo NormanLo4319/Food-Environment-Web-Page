@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Food Environment Analysis</title>
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <div class="navigation">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">
+            Food Environment Analysis
+            </a>
+            <button class="navbar-toggler border" type="button" data-toggle="collapse" data-target="#navbarDropdown"
+            aria-controls="navbarDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button> 
+
+            <div class="collapse navbar-collapse" id="navbarDropdown">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Plots
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="plot_1.html">Obesity vs Diabetes</a>
+                            <a class="dropdown-item" href="plot_2.html">Obesity vs Diabetes by Food Environment</a>
+                            <a class="dropdown-item" href="plot_3.html">Diabetes & Food Environment</a>
+                            <a class="dropdown-item" href="plot_4.html">Obesity & Food Environment</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Statistical Analysis
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="t_test.html">T Test</a>
+                            <a class="dropdown-item" href="anova.html">ANOVA Test</a>
+                            <a class="dropdown-item" href="regression.html">Regression Model</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="group_plot.html">Comparison</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="data.html">Data</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container mt-4 mb-4">
+        <div class="col-lg-10">
+            <div class="box">
+                <h1>Simple Linear Regression Model</h1>
+                <h2 class="mt-2">Objective:</h2>
+                <p>The correlation between food environment and health outcomes is tested in three different parts. 
+                    In the previous sections (t-test & ANOVA test), we failed to find any signficant effect of the food environment to the health outcomes at the county level. In this section, 
+                    we are trying to use the simple linear regression model to see if we can find find any statistical evidence of the correlation of the food enviroment and health outcomes. The model will have 
+                    the dependent variable, health outcomes (obesity rate and diabetes rate), and one independent variable, food environment (fast food ratio). We run two separate regressions for the two health outcomes.
+                </p>
+                <h4>Regression on Obesity Rate:</h4>
+                <p><strong>Specification: </strong>Obesity Rate = beta0 + beta1 (Fast Food Ratio) + e</p>
+                
+                <h4>Regression on Diabetes Rate:</h4>
+                <p><strong>Specification: </strong>Diabetes Rate = beta0 + beta1 (Fast Food Ratio) + e</p>
+                
+                <table class="table">
+                    <caption style="caption-side:top">Results:</caption>
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Report</th>
+                            <th scope="col">Obesity Rate</th>
+                            <th scope="col">Diabetes Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Coefficient</th>
+                            <td>0.0002</td>
+                            <td>-0.00025</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Intercept</th>
+                            <td>30.849</td>
+                            <td>10.084</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">R^2</th>
+                            <td>0.0233</td>
+                            <td>-0.0631</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">p-value</th>
+                            <td>0.2645</td>
+                            <td>0.00245</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Standard Error</th>
+                            <td>0.00018</td>
+                            <td>0.00008</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="media mt-2 mb-2">
+                    <img class="mt-2 mb-2" src="./Graphs/PFR_Obesity(Regression_Line).png" alt="Obesity Regression">
+                    <img class="mt-2 mb-2" src="./Graphs/PFR_Diabetes(Regression_Line).png" alt="Diabetes Regression">
+                </div>
+                <h2 class="mt-2">Conclusion:</h2>
+                <p>Again, we failed to find any statistical evident from the two regressions suggest any correlation between food environment and health outcomes. However, this result 
+                    does not suggest the food environement has no correlation with the health outcomes at the county level.  There are at least two logical reasons for further study in this 
+                    topic.  First of all, the simple linear regression model failed to control other factors that could possibly contribute to the "Obesity Epidemic", such as education, population demographic,
+                    work environment, etc.  Without controlling these factors, it is very reasonable to believe that the simple linear regression model has an omitted variable issue. Secondly, food environment 
+                    is constructed based on business decision.  Most fast food restaurant chains target a particular population (usually low income family), so it is possible that the county income distribution 
+                    is correlated with both the food environment and health outcomes at the same time.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+<footer>
+    <div class="footer">&copy; Copyright 2019</div>
+</footer>
+</html>
