@@ -1,5 +1,5 @@
 # Web Visualization & Dashboard (Food Environment Web Page)
-Linked with Food-Enviroment-Project
+Rooted with Food-Enviroment-Project
 
 ## Background
 
