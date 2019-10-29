@@ -5,7 +5,7 @@ Rooted with Food-Enviroment-Project
 
 Data is more powerful when we share it with others! We are taking what we learned about HTML and CSS to create a dashboard showing off the analysis we've done (in the Food-Enviroment-Project).
 
-![heat_map](Graphs/heat_map.png)
+![heat_map](Images/heat_map.png)
 
 ## Latitude - Latitude Analysis Dashboard with Attitude
 
