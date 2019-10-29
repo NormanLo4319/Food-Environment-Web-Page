@@ -15,7 +15,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <div class="navigation">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="../index.html">
             Food Environment Analysis
             </a>
             <button class="navbar-toggler border" type="button" data-toggle="collapse" data-target="#navbarDropdown"
@@ -62,55 +62,56 @@
     <div class="container mt-4 mb-4">
         <div class="col-lg-10">
             <div class="box">
-                <h1>ANOVA Test</h1>
+                <h1>T-Test (Independent Design)</h1>
                 <h2 class="mt-2">Objective:</h2>
                 <p>The correlation between food environment and health outcomes is tested in three different parts. 
-                   The second test allow us to identify any statistical difference between the three types of fast food density county. 
-                   The problem of the t-test is that it cannot effectively test more than two treatment conditions.  The ANOVA test can 
-                   minimize the Type I Error (without inflating the Type I Error) when more than two treatment condtions are needed to be tested.
+                    We first use the t-test to identify any statistical signficiant difference of health outcomes in the <strong>high</strong> and <strong>average</strong> fast food counties. 
+                    In the t-test setting, high fast food ratio is the treatment in our study and we are comparing the health outcomes in these counties that received treatment and compares it to all the counties in our data.
+                    For the hypothesis testing, counties in data are divided into three catagories.
                     <ul class="mt-2 mb-2">
                         <li>High Ratio Counties: Population per Fast Food Restaurant Ratio less than 500</li>
                         <li>Mid Ratio Counties: Population per Fast Food Restaurant Ratio less than 1500 and greater than 500</li>
                         <li>Low Ratio Counties: Population per Fast Food Restaurant Ratio less than 2000 and greater than 1500</li>
                     </ul>
                     <div class="media mb-2">
-                            <img src="./Graphs/County_Rank_Proportion.png" alt="High, Mid, and Low Ratio County Pie Chart">
+                            <img src="../Images/County_Rank_Proportion.png" alt="High, Mid, and Low Ratio County Pie Chart">
                     </div>
+                    The null hypothesis states the obesity rate or the diabetes rate is higher in the average fast food ratio counties as compare to the high fast food ratio counties. If the null hypothesis is rejected 
+                    the alternative hypothesis will be accepted. Two separated tests are performed and the results are reported below.
                 </p>
                 <h4>Test for Obesity Rate:</h4>
-                <p>Null Hypothesis: Obesity rate mean in the three treatment conditions are the same.</p>
-                <p>Alternative Hypothesis: At least one of the three treatment conditions has a different obesity rate mean.</p>
-                <p>Alpha = 5%</p>
+                <p>Null Hypothesis: Obesity rates in all counties are statistically higher than or equal to the high fast food restaurant ratio counties.</p>
+                <p>Alternative Hypothesis: Obesity rates in all counties are statistically lower than the high fast food restaurant ratio counties.</p>
+                <p>Alpha = 5%, one-tailed test</p>
                 <h4>Test for Diabetes Rate:</h4>
-                <p>Null Hypothesis: Diabetes rate mean in the three treatment conditions are the same.</p>
-                <p>Alternative Hypothesis: At least one of the three treatment conditions has a different diabetes rate mean.</p>
-                <p>Alpha = 5%</p>
+                <p>Null Hypothesis: Diabetes rate in all counties are statistically higher than or equal to the high fast food restaurant ratio counties.</p>
+                <p>Alternative Hypothesis: Diabetes rate in aall counties are statistically lower than the high fast food restaurant ratio counties.</p>
+                <p>Alpha = 5%, one-tailed test</p>
                 <table class="table">
                     <caption style="caption-side:top">Results:</caption>
                     <thead class="thead-light">
                         <tr>
                             <th scope="col">Test On</th>
-                            <th scope="col">F-statistic</th>
+                            <th scope="col">t-statistic</th>
                             <th scope="col">p-value</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Obesity Rate</td>
-                            <td>2.1654</td>
-                            <td>0.1149</td>
+                            <td>1.3597</td>
+                            <td>0.1740</td>
                         </tr>
                         <tr>
                             <td>Diabetes Rate</td>
-                            <td>3.6826</td>
-                            <td>0.0253**</td>
+                            <td>-1.059</td>
+                            <td>0.2897</td>
                         </tr>
                     </tbody>
                 </table>
                 <h2 class="mt-2">Conclusion:</h2>
-                <p>We do not find any statistical evidence that suggests higher obesity rate is found to be different in the three treatment conditions at 5% signficant level. 
-                    However, we do reject the null hypothesis in the diabetes rate test, which suggest that at least one of the treatment conditions is found to has a different diabetes rate mean at 5% signficant level.
-                    Unfortunately, in the ANOVA test setting, we can only found a very weak evident suggest the food enviroment is correlate to the health outcomes. 
+                <p>We do not find any statistical evidence that suggests higher obesity rate or diabetes rate is found in the high fast food ratio counties at 5% signficant level. 
+                    Therefore, we can conclude that the treatment (high fast food ratio) does not cause higher obestity rate or diabetes rate within the county.
                 </p>
             </div>
         </div>

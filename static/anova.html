@@ -15,7 +15,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <div class="navigation">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="../index.html">
             Food Environment Analysis
             </a>
             <button class="navbar-toggler border" type="button" data-toggle="collapse" data-target="#navbarDropdown"
@@ -62,67 +62,55 @@
     <div class="container mt-4 mb-4">
         <div class="col-lg-10">
             <div class="box">
-                <h1>Simple Linear Regression Model</h1>
+                <h1>ANOVA Test</h1>
                 <h2 class="mt-2">Objective:</h2>
                 <p>The correlation between food environment and health outcomes is tested in three different parts. 
-                    In the previous sections (t-test & ANOVA test), we failed to find any signficant effect of the food environment to the health outcomes at the county level. In this section, 
-                    we are trying to use the simple linear regression model to see if we can find find any statistical evidence of the correlation of the food enviroment and health outcomes. The model will have 
-                    the dependent variable, health outcomes (obesity rate and diabetes rate), and one independent variable, food environment (fast food ratio). We run two separate regressions for the two health outcomes.
+                   The second test allow us to identify any statistical difference between the three types of fast food density county. 
+                   The problem of the t-test is that it cannot effectively test more than two treatment conditions.  The ANOVA test can 
+                   minimize the Type I Error (without inflating the Type I Error) when more than two treatment condtions are needed to be tested.
+                    <ul class="mt-2 mb-2">
+                        <li>High Ratio Counties: Population per Fast Food Restaurant Ratio less than 500</li>
+                        <li>Mid Ratio Counties: Population per Fast Food Restaurant Ratio less than 1500 and greater than 500</li>
+                        <li>Low Ratio Counties: Population per Fast Food Restaurant Ratio less than 2000 and greater than 1500</li>
+                    </ul>
+                    <div class="media mb-2">
+                            <img src="../Images/County_Rank_Proportion.png" alt="High, Mid, and Low Ratio County Pie Chart">
+                    </div>
                 </p>
-                <h4>Regression on Obesity Rate:</h4>
-                <p><strong>Specification: </strong>Obesity Rate = beta0 + beta1 (Fast Food Ratio) + e</p>
-                
-                <h4>Regression on Diabetes Rate:</h4>
-                <p><strong>Specification: </strong>Diabetes Rate = beta0 + beta1 (Fast Food Ratio) + e</p>
-                
+                <h4>Test for Obesity Rate:</h4>
+                <p>Null Hypothesis: Obesity rate mean in the three treatment conditions are the same.</p>
+                <p>Alternative Hypothesis: At least one of the three treatment conditions has a different obesity rate mean.</p>
+                <p>Alpha = 5%</p>
+                <h4>Test for Diabetes Rate:</h4>
+                <p>Null Hypothesis: Diabetes rate mean in the three treatment conditions are the same.</p>
+                <p>Alternative Hypothesis: At least one of the three treatment conditions has a different diabetes rate mean.</p>
+                <p>Alpha = 5%</p>
                 <table class="table">
                     <caption style="caption-side:top">Results:</caption>
                     <thead class="thead-light">
                         <tr>
-                            <th scope="col">Report</th>
-                            <th scope="col">Obesity Rate</th>
-                            <th scope="col">Diabetes Rate</th>
+                            <th scope="col">Test On</th>
+                            <th scope="col">F-statistic</th>
+                            <th scope="col">p-value</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">Coefficient</th>
-                            <td>0.0002</td>
-                            <td>-0.00025</td>
+                            <td>Obesity Rate</td>
+                            <td>2.1654</td>
+                            <td>0.1149</td>
                         </tr>
                         <tr>
-                            <th scope="row">Intercept</th>
-                            <td>30.849</td>
-                            <td>10.084</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">R^2</th>
-                            <td>0.0233</td>
-                            <td>-0.0631</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">p-value</th>
-                            <td>0.2645</td>
-                            <td>0.00245</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Standard Error</th>
-                            <td>0.00018</td>
-                            <td>0.00008</td>
+                            <td>Diabetes Rate</td>
+                            <td>3.6826</td>
+                            <td>0.0253**</td>
                         </tr>
                     </tbody>
                 </table>
-                <div class="media mt-2 mb-2">
-                    <img class="mt-2 mb-2" src="./Graphs/PFR_Obesity(Regression_Line).png" alt="Obesity Regression">
-                    <img class="mt-2 mb-2" src="./Graphs/PFR_Diabetes(Regression_Line).png" alt="Diabetes Regression">
-                </div>
                 <h2 class="mt-2">Conclusion:</h2>
-                <p>Again, we failed to find any statistical evident from the two regressions suggest any correlation between food environment and health outcomes. However, this result 
-                    does not suggest the food environement has no correlation with the health outcomes at the county level.  There are at least two logical reasons for further study in this 
-                    topic.  First of all, the simple linear regression model failed to control other factors that could possibly contribute to the "Obesity Epidemic", such as education, population demographic,
-                    work environment, etc.  Without controlling these factors, it is very reasonable to believe that the simple linear regression model has an omitted variable issue. Secondly, food environment 
-                    is constructed based on business decision.  Most fast food restaurant chains target a particular population (usually low income family), so it is possible that the county income distribution 
-                    is correlated with both the food environment and health outcomes at the same time.
+                <p>We do not find any statistical evidence that suggests higher obesity rate is found to be different in the three treatment conditions at 5% signficant level. 
+                    However, we do reject the null hypothesis in the diabetes rate test, which suggest that at least one of the treatment conditions is found to has a different diabetes rate mean at 5% signficant level.
+                    Unfortunately, in the ANOVA test setting, we can only found a very weak evident suggest the food enviroment is correlate to the health outcomes. 
                 </p>
             </div>
         </div>
