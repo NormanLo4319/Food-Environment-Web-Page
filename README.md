@@ -7,7 +7,7 @@ Data is more powerful when we share it with others! We are taking what we learne
 
 ![heat_map](Images/heat_map.png)
 
-## Latitude - Latitude Analysis Dashboard with Attitude
+## Latitude Analysis Dashboard with Attitude
 
 In this challenge, we create a visualization dashboard website using visualizations we've created in the Food-Enviroment-Project.
 
