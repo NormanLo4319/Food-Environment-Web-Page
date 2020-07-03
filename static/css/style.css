@@ -1,0 +1,9 @@
+.feature_image {
+    height: 421px;
+    width: 686px;
+}
+
+.feature_image img{
+    height: 100%;
+    width: 100%
+}
