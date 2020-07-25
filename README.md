@@ -41,4 +41,4 @@ Finally, the website is deployed to GitHub pages. Feel free to check it out your
 
 [Food Environment Project](https://normanlo4319.github.io/Food-Environment-Web-Page/)
 
-
+Copyright © 2020 Norman Lo
